@@ -1,0 +1,19 @@
+{
+  "name": "playlists",
+  "version": "0.1.0",
+  "description": "Showcase your music collection in a way that's streaming platform agnostic + with highlighted selections.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bmitchinson/Playlists.git"
+  },
+  "author": "Ben Mitchinson",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/bmitchinson/Playlists/issues"
+  },
+  "homepage": "https://github.com/bmitchinson/Playlists#readme"
+}
