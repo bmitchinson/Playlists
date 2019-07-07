@@ -1,5 +1,5 @@
 import Tidal = require('tidal-api-wrapper');
-import { TidalPass, TidalUser } from '../PlatformKeys';
+import { TidalPass, TidalUser } from '../serviceKeys';
 
 const tidal = new Tidal();
 
