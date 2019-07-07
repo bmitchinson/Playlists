@@ -1,6 +1,7 @@
 PlatformKeys.ts
 
 ##############
+out/
 PlatformScripts/out/
 node_modules/
 

@@ -4,7 +4,8 @@
   "description": "Showcase your music collection in a way that's streaming platform agnostic + with highlighted selections.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tslint -p tsconfig.json || exit 0"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/bmitchinson/Playlists/issues"
   },
-  "homepage": "https://github.com/bmitchinson/Playlists#readme"
+  "homepage": "https://github.com/bmitchinson/Playlists#readme",
+  "dependencies": {
+    "@types/node": "^12.0.12",
+    "tidal-api-wrapper": "^1.7.0"
+  },
+  "devDependencies": {}
 }
