@@ -5,17 +5,17 @@ Showcase your music collection in a way that's streaming platform agnostic + wit
 ### Goals
 - Make my music accessible on any platform
 - Provide a space to showcase and log what music is important to me and why
-- Create a concept side that could one day be offered as a service to others
-- Showcase just how amazing [Soundizz](https://soundiiz.com) is.
+- Create a functioning site to demo a service offered to others
+- Showcase just how amazing [Soundizz](https://soundiiz.com) is, use it to request access to their API.
 
 ### Learning
 - Creating my own API on GCP
 - Preact
-- Slim Device Responsive UI
+- Slim + Device Responsive UI
 - How to make a Progressive Web App
 - TypeScript
 - Bundling (?) (Parcel?)
-
+- MobX
 
 ### Tooling
 - Build a Progressive Web App with TypeScript, Preact, and MobX
