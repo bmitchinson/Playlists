@@ -3,23 +3,16 @@ import { TidalPass, TidalUser } from '../serviceKeys';
 
 const tidal = new Tidal();
 
-let playlistID: String = '075a2d08-d988-4bd3-b943-bdd870b50dfe';
-
-let whitelistNames: String[] = ['soft indie', 'two'];
+const whitelistNames: string[] = []; // ['soft indie'];
 
 (async () => {
   const result = await tidal.login(TidalUser, TidalPass);
   const playlists = await tidal.getPlaylists();
-  const toDelete = playlists.filter(playlist => {
+  const toDelete = playlists.filter((playlist) => {
     return !whitelistNames.includes(playlist.title);
   });
-  // toDelete.forEach(async (playlist) => {
-  //   await tidal.deletePlaylist(playlist.uuid);
-  // });
-
-  // console.log("playlist:", playlist);
-  // await new Promise((r) => setTimeout(r, 1000));
-  // console.log('Attempting Delete');
-  // await tidal.deletePlaylist(playlistID);
-  // console.log('Playlist Deleted');
+  toDelete.forEach(async (playlist) => {
+    process.stdout.write('Removing ' + playlist.title + ' from Tidal:');
+    await tidal.deletePlaylist(playlist.uuid);
+  });
 })();
