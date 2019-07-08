@@ -12,7 +12,7 @@ const whitelistNames: string[] = []; // ['soft indie'];
     return !whitelistNames.includes(playlist.title);
   });
   toDelete.forEach(async (playlist) => {
-    process.stdout.write('Removing ' + playlist.title + ' from Tidal:');
+    console.log('Removing ' + playlist.title + ' from Tidal:');
     await tidal.deletePlaylist(playlist.uuid);
   });
 })();
