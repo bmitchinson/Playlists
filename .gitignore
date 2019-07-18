@@ -1,4 +1,5 @@
 serviceKeys.ts
+*.js
 
 ##############
 out/
