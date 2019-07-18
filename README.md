@@ -29,4 +29,5 @@ firestore is then used by the frontend to diplay my music collection.
 - Deployment from GitHub
 
 ### Eventually...
-- Integrate a twitter webhook to showcase music selections/highlights alongside personal writing
+- Integrate a twitter webhook to showcase music selections/highlights alongside personal writing to note random reflections on 
+music
