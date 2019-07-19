@@ -31,3 +31,4 @@ firestore is then used by the frontend to diplay my music collection.
 ### Eventually...
 - Integrate a twitter webhook to showcase music selections/highlights alongside personal writing to note random reflections on 
 music
+- Let guests sign into the site with Spotify to be able to follow playlists directly from site
