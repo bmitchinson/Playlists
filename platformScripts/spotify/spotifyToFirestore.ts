@@ -1,9 +1,13 @@
 require('dotenv').config();
+import Firestore = require('@google-cloud/firestore');
 import SpotifyWebApi = require('spotify-web-api-node');
 
 import { IPlaylistFBMeta } from './spotifyTypes';
 
-console.log(process.env.tidalUser);
+const firestore = new Firestore({
+  projectId: 'playlists-245820',
+  keyFilename: './playlistAdmin.json'
+});
 
 const spotifyApi: SpotifyWebApi = new SpotifyWebApi({
   clientId: process.env.spotifyClientID,
