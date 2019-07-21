@@ -1,13 +1,14 @@
-import Tidal = require('tidal-api-wrapper');
 // Using bmitchinson fork https://github.com/bmitchinson/tidal-api/tree/delete-playlist
-import { TidalPass, TidalUser } from '../serviceKeys';
+require('dotenv').config();
+
+import Tidal = require('tidal-api-wrapper');
 
 const tidal = new Tidal();
 
 const whitelistPlaylistNames: string[] = []; // ['soft indie'];
 
 const deleteAll = async () => {
-  await tidal.login(TidalUser, TidalPass);
+  await tidal.login(process.env.tidalUser, process.env.tidalPass);
   try {
     const playlists = await tidal.getPlaylists();
 

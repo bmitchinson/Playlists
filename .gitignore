@@ -1,11 +1,14 @@
-serviceKeys.ts
 *.js
-
 ##############
+
 out/
 PlatformScripts/out/
 node_modules/
-
 ##############
+
 .vscode/
 *.DS_Store
+##############
+
+.env
+##############

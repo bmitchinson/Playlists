@@ -1,11 +1,13 @@
+require('dotenv').config();
 import SpotifyWebApi = require('spotify-web-api-node');
 
-import { SpotifyClientID, SpotifyClientSecret} from '../serviceKeys';
 import { IPlaylistFBMeta } from './spotifyTypes';
 
+console.log(process.env.tidalUser);
+
 const spotifyApi: SpotifyWebApi = new SpotifyWebApi({
-  clientId: SpotifyClientID,
-  clientSecret: SpotifyClientSecret
+  clientId: process.env.spotifyClientID,
+  clientSecret: process.env.SpotifyClientSecret
 });
 
 const setNewAccessToken = async (showToken = false) => {
@@ -42,23 +44,40 @@ const getAllPlaylistIDs = async (): Promise<string[]> => {
   return playlistIDs;
 };
 
-const getFolder = ((disc: string): string | undefined => {
+const getFolder = (disc: string): string | undefined => {
   if (disc.indexOf('dir:') > -1) {
     return disc.split(':')[1];
   }
   return undefined;
-});
+};
+
+const getFiveArtists = (tracks: any): string[] => {
+  const fiveArtists = [];
+
+  for (const trackObj of tracks.items) {
+    if (fiveArtists.length < 5) {
+      const artist = trackObj.track.artists[0].name;
+      if (!fiveArtists.includes(artist)) {
+        fiveArtists.push(artist);
+      }
+    }
+  }
+
+  return fiveArtists;
+};
 
 const playlistIDsToFullMeta = (async (allPlaylistIDs: string[]): Promise<IPlaylistFBMeta[]> => {
   const allPlaylistsFBMeta: IPlaylistFBMeta[] = [];
-
   for (const playlistID of allPlaylistIDs) {
     await spotifyApi.getPlaylist(playlistID).then(
       (data: any) => {
+        console.log(data.body.images[0]);
         allPlaylistsFBMeta.push({
+          artists: getFiveArtists(data.body.tracks),
           folder: getFolder(data.body.description),
           followers: data.body.followers.total,
           id: data.body.id,
+          image: data.body.images[0],
           isOwner: data.body.owner.id === '115bwm',
           name: data.body.name
         });

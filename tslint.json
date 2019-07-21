@@ -9,7 +9,8 @@
         "no-console": false,
         "trailing-comma": false,
         "forin": false,
-        "max-line-length": false
+        "max-line-length": false,
+        "no-var-requires": false
     },
     "rulesDirectory": []
 }
