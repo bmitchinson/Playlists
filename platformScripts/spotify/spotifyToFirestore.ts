@@ -17,18 +17,21 @@ import {
   await setNewAccessToken();
   const allPlaylistIDs: string[] = await fetchAllPlaylistIDs();
   console.log(`getting FBMeta data for all ${allPlaylistIDs.length} public playlists...`);
-  const allPublicPlaylistsFBMeta: IPlaylistFBMeta[] = await fetchFBMeta(allPlaylistIDs.slice(0, 10));
+  const allPublicPlaylistsFBMeta: IPlaylistFBMeta[] = await fetchFBMeta(allPlaylistIDs);
   const myPlaylistsToPublish: IPlaylistFBMeta[] = allPublicPlaylistsFBMeta.filter((playlist) => playlist.folder);
   const followedPlaylistsToPublish: IPlaylistFBMeta[] = allPublicPlaylistsFBMeta.filter((playlist) => !playlist.isOwner);
   console.log(`you have ${myPlaylistsToPublish.length} tagged playlists and ${followedPlaylistsToPublish.length} public follows`);
 
-  //console.log(`\nClearing existing collections`);
-  //await deleteAllDocumentsInCollection('myPlaylists');
-  for (const playlist of myPlaylistsToPublish.splice(0, 2)) {
+  console.log(`clearing existing collections...`);
+  await deleteAllDocumentsInCollection('myPlaylists');
+  await deleteAllDocumentsInCollection('followPlaylists');
+
+  console.log('pushing to myPlaylists...');
+  for (const playlist of myPlaylistsToPublish) {
     await addToMyPlaylists(playlist);
   }
-  //await deleteAllDocumentsInCollection('followPlaylists');
-  for (const playlist of followedPlaylistsToPublish.splice(0, 1)) {
+  console.log('pushing to followedPlaylists..');
+  for (const playlist of followedPlaylistsToPublish) {
     await addToFollowPlaylists(playlist);
   }
 

@@ -1,6 +1,7 @@
 export interface IPlaylistFBMeta {
+  // if (isOwner && !folder): playlist is excluded from firebase
   artists: string[];
-  folder: string | undefined; // if folder is null, it's completely excluded from FB
+  folder: string | null;
   followers: number;
   image: string;
   id: string;

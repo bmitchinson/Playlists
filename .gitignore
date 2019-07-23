@@ -1,6 +1,9 @@
 *.js
 ##############
 
+notes/firebaseREST.md
+##############
+
 out/
 PlatformScripts/out/
 node_modules/

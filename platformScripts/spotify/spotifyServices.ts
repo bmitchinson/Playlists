@@ -47,7 +47,7 @@ const getFolder = (disc: string): string | undefined => {
   if (disc.indexOf('dir:') > -1) {
     return disc.split(':')[1];
   }
-  return undefined;
+  return null;
 };
 
 const getFiveArtists = (tracks: any): string[] => {

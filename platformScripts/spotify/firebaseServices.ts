@@ -27,7 +27,7 @@ export const deleteAllDocumentsInCollection = async (collectionName: string) => 
   try {
     const documentList = await firestore.collection(`${collectionName}`).listDocuments();
     for (const doc of documentList) {
-      doc.delete();
+      await doc.delete();
     }
   } catch (e) {
     console.log(`something went wrong when deleting documents in collection "${collectionName}"`);
