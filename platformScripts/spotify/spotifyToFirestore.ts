@@ -38,6 +38,9 @@ import {
   console.log('***finished***');
 })();
 
+// TODO: Remove emojis from document name? Did that break pushing up "cry / dance"?
+// dirty hit mixtape worked fine tho?
+
 // Call delete everything from Firebase
 
 // Create firestore playlist sub-directories from playlist descriptions and populate
