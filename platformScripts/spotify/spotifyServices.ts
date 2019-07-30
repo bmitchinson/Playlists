@@ -81,6 +81,7 @@ export const fetchFBMeta = async (allPlaylistIDs: string[]): Promise<IPlaylistFB
           id: data.body.id,
           image: data.body.images[0].url,
           isOwner: data.body.owner.id === '115bwm',
+          isSpotify: data.body.owner.id === 'spotify',
           name: data.body.name
         });
         count++;

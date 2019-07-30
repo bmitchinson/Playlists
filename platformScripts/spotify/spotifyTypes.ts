@@ -6,5 +6,6 @@ export interface IPlaylistFBMeta {
   image: string;
   id: string;
   isOwner: boolean;
+  isSpotify: boolean;
   name: string;
 }
