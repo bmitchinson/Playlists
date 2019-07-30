@@ -9,7 +9,7 @@ const firestore = new Firestore({
 
 export const addToMyPlaylists = async (playlist: IPlaylistFBMeta) => {
   try {
-    await firestore.collection('myPlaylists').doc(`${playlist.name.replace(/\//g, '')}`).set(playlist);
+    await firestore.collection('myPlaylists').doc(`${playlist.name.replace(/[^a-zA-Z0-9 -]/g, '')}`).set(playlist);
   } catch (e) {
     console.log(`something went wrong when posting playlist "${playlist.name}" to myPlaylists`);
   }
@@ -17,7 +17,7 @@ export const addToMyPlaylists = async (playlist: IPlaylistFBMeta) => {
 
 export const addToFollowPlaylists = async (playlist: IPlaylistFBMeta) => {
   try {
-    await firestore.collection('followPlaylists').doc(`${playlist.name.replace(/\//g, '')}`).set(playlist);
+    await firestore.collection('followPlaylists').doc(`${playlist.name.replace(/[^a-zA-Z0-9 -]/g, '')}`).set(playlist);
   } catch (e) {
     console.log(`something went wrong when posting playlist "${playlist.name}" to followPlaylists`);
   }
