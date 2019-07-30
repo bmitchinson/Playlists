@@ -1,0 +1,10 @@
+{
+  "plugins": [
+    "stylelint-order"
+  ],
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "indentation": null,
+    "order/properties-alphabetical-order": true
+  }
+}

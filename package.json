@@ -4,7 +4,8 @@
     "description": "Showcase your music collection in a way that's streaming platform agnostic + with highlighted selections.",
     "scripts": {
         "lint": "eslint . --ext .json --ext .ts || exit 0",
-        "spotify": "ts-node platformScripts/spotify/spotifyToFirestore.ts"
+        "spotify": "ts-node platformScripts/spotify/spotifyToFirestore.ts",
+        "serve": "preact watch --cwd frontend"
     },
     "repository": {
         "type": "git",
@@ -36,6 +37,9 @@
         "eslint-plugin-prettier": "^3.1.0",
         "eslint-plugin-react": "^7.14.3",
         "prettier": "^1.18.2",
+        "prettier-stylelint": "^0.4.2",
+        "stylelint-config-standard": "^18.3.0",
+        "stylelint-order": "^3.0.1",
         "typescript": "^3.5.3"
     }
 }

@@ -1,13 +1,13 @@
 *.js
 ##############
 
-notes/firebaseREST.md
-##############
-
 out/
-PlatformScripts/out/
+build/
+assets/
 node_modules/
 ##############
+
+frontend/build
 
 .vscode/
 *.DS_Store
