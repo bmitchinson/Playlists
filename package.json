@@ -1,30 +1,41 @@
 {
-  "name": "playlists",
-  "version": "0.1.0",
-  "description": "Showcase your music collection in a way that's streaming platform agnostic + with highlighted selections.",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "tslint -p tsconfig.json || exit 0",
-    "spotify": "ts-node platformScripts/spotify/spotifyToFirestore.ts"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bmitchinson/Playlists.git"
-  },
-  "author": "Ben Mitchinson",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/bmitchinson/Playlists/issues"
-  },
-  "homepage": "https://github.com/bmitchinson/Playlists#readme",
-  "dependencies": {
-    "@google-cloud/firestore": "^2.2.4",
-    "@types/node": "^12.0.12",
-    "@types/spotify-web-api-node": "^4.0.0",
-    "dotenv": "^8.0.0",
-    "spotify-web-api-node": "^4.0.0",
-    "tidal-api-wrapper": "^1.7.0"
-  },
-  "devDependencies": {}
+    "name": "playlist-scripts",
+    "version": "0.1.0",
+    "description": "Showcase your music collection in a way that's streaming platform agnostic + with highlighted selections.",
+    "scripts": {
+        "lint": "eslint . --ext .json --ext .ts || exit 0",
+        "spotify": "ts-node platformScripts/spotify/spotifyToFirestore.ts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bmitchinson/Playlists.git"
+    },
+    "author": "Ben Mitchinson",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/bmitchinson/Playlists/issues"
+    },
+    "homepage": "https://github.com/bmitchinson/Playlists",
+    "dependencies": {
+        "@google-cloud/firestore": "^2.2.4",
+        "dotenv": "^8.0.0",
+        "spotify-web-api-node": "^4.0.0",
+        "tidal-api-wrapper": "^1.7.0"
+    },
+    "devDependencies": {
+        "@types/node": "^12.6.8",
+        "@types/spotify-web-api-node": "^4.0.0",
+        "@typescript-eslint/eslint-plugin": "^1.13.0",
+        "@typescript-eslint/parser": "^1.13.0",
+        "eslint": "^5.3.0",
+        "eslint-config-airbnb": "^17.1.1",
+        "eslint-config-prettier": "^6.0.0",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-json": "^1.4.0",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-prettier": "^3.1.0",
+        "eslint-plugin-react": "^7.14.3",
+        "prettier": "^1.18.2",
+        "typescript": "^3.5.3"
+    }
 }
