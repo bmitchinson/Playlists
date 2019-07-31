@@ -1,12 +1,18 @@
 {
-    "name": "playlist-scripts",
-    "version": "0.1.0",
+    "name": "playlists",
+    "version": "0.0.1",
     "description": "Showcase your music collection in a way that's streaming platform agnostic + with highlighted selections.",
     "scripts": {
         "lint": "eslint . --ext .json --ext .ts || exit 0",
         "spotify": "ts-node platformScripts/spotify/spotifyToFirestore.ts",
-        "serve": "preact watch --cwd frontend"
+        "watch": "preact watch --src preact",
+        "build": "preact build --src preact --dest preact_build",
+        "serve": "preact build --src preact --dest preact_build && simplehttpserver preact_build"
     },
+    "eslintIgnore": [
+        "preact_build",
+        "out"
+    ],
     "repository": {
         "type": "git",
         "url": "git+https://github.com/bmitchinson/Playlists.git"
@@ -20,6 +26,10 @@
     "dependencies": {
         "@google-cloud/firestore": "^2.2.4",
         "dotenv": "^8.0.0",
+        "preact": "^8.2.6",
+        "preact-compat": "^3.17.0",
+        "preact-render-to-string": "^4.1.0",
+        "preact-router": "^2.5.7",
         "spotify-web-api-node": "^4.0.0",
         "tidal-api-wrapper": "^1.7.0"
     },
@@ -36,10 +46,18 @@
         "eslint-plugin-jsx-a11y": "^6.2.3",
         "eslint-plugin-prettier": "^3.1.0",
         "eslint-plugin-react": "^7.14.3",
+        "identity-obj-proxy": "^3.0.0",
+        "node-sass": "^4.12.0",
+        "preact-cli": "^2.1.0",
+        "preact-cli-plugin-typescript": "^0.2.2",
+        "preact-render-spy": "^1.2.1",
         "prettier": "^1.18.2",
         "prettier-stylelint": "^0.4.2",
+        "sass-loader": "^7.1.0",
+        "simplehttpserver": "^0.3.0",
         "stylelint-config-standard": "^18.3.0",
         "stylelint-order": "^3.0.1",
+        "superstatic": "^6.0.4",
         "typescript": "^3.5.3"
     }
 }

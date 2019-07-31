@@ -1,8 +1,11 @@
 {
-  "compilerOptions": {
-      "target": "es6",
-      "module": "commonjs",
-      "outDir": "out",
-      "sourceMap": true
-  }
+    "compilerOptions": {
+        "allowJs": true,
+        "target": "es6",
+        "module": "commonjs",
+        "outDir": "out",
+        "sourceMap": true,
+        "jsx": "react",
+        "jsxFactory": "h"
+    }
 }
