@@ -4,9 +4,10 @@ import { Router } from 'preact-router';
 import Header from './header';
 
 // Code-splitting is automated for routes
-//import Home from '../routes/home/style.scss';
-const Home = require('../routes/home/style.scss');
+import Home from '../routes/home';
 import Profile from '../routes/profile';
+
+require('preact/debug');
 
 interface MyProps {}
 interface MyState {}
@@ -16,6 +17,7 @@ export default class App extends Component<MyProps, MyState> {
      *	@param {Object} event		"change" event from [preact-router](http://git.io/preact-router)
      *	@param {string} event.url	The newly routed URL
      */
+
     currentUrl;
 
     handleRoute = e => {
@@ -28,7 +30,7 @@ export default class App extends Component<MyProps, MyState> {
                 <Header />
                 <Router onChange={this.handleRoute}>
                     <Home path="/" />
-                    <Profile path="/profile/" user="me" />
+                    <Profile path="/profile/" />
                     <Profile path="/profile/:user" />
                 </Router>
             </div>

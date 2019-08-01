@@ -1,7 +1,7 @@
 *.js
+*.js.map
 ##############
 
-out/
 preact_build/
 assets/
 node_modules/

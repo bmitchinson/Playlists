@@ -1,11 +1,16 @@
 {
+    "compileOnSave": false,
     "compilerOptions": {
         "allowJs": true,
+        "esModuleInterop": true,
         "target": "es6",
         "module": "commonjs",
-        "outDir": "out",
         "sourceMap": true,
         "jsx": "react",
-        "jsxFactory": "h"
-    }
+        "jsxFactory": "h",
+        "lib": ["es6", "dom"]
+        //"noEmit": true
+    },
+    "include": ["preact/**/*", "platformScripts/**/*"],
+    "exclude": ["preact/index.js"]
 }

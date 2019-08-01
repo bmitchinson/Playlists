@@ -6,8 +6,9 @@
         "lint": "eslint . --ext .json --ext .ts || exit 0",
         "spotify": "ts-node platformScripts/spotify/spotifyToFirestore.ts",
         "watch": "preact watch --src preact",
-        "build": "preact build --src preact --dest preact_build",
-        "serve": "preact build --src preact --dest preact_build && simplehttpserver preact_build"
+        "preact_build": "preact build --src preact --dest preact_build --no-prerender",
+        "preact_ts": "cd preact && tsc && cd .. ",
+        "preact": "npm run preact_ts && npm run preact_build && simplehttpserver preact_build"
     },
     "eslintIgnore": [
         "preact_build",
@@ -29,7 +30,7 @@
         "preact": "^8.2.6",
         "preact-compat": "^3.17.0",
         "preact-render-to-string": "^4.1.0",
-        "preact-router": "^2.5.7",
+        "preact-router": "^2.6.1",
         "spotify-web-api-node": "^4.0.0",
         "tidal-api-wrapper": "^1.7.0"
     },
