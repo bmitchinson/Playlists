@@ -7,7 +7,7 @@ interface MyProps {
 interface MyState {}
 
 export default class Profile extends Component<MyProps, MyState> {
-    render() {
+    render(): JSX.Element {
         console.log('RENDER');
         return <p>HEY</p>;
     }

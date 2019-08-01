@@ -28,11 +28,12 @@ export default class App extends Component<MyProps, MyState> {
         return (
             <div id="app">
                 <Header />
-                <Router onChange={this.handleRoute}>
+                <Profile path="/" />
+                {/* <Router onChange={this.handleRoute}>
                     <Home path="/" />
                     <Profile path="/profile/" />
                     <Profile path="/profile/:user" />
-                </Router>
+                </Router> */}
             </div>
         );
     }
