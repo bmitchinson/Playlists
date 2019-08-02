@@ -9,7 +9,8 @@
         "spotify": "tsc platformScripts/spotify/spotifyToFirestore.ts && node -r source-map-support/register platformScripts/spotify/spotifyToFirestore.js",
         "preact_build": "preact build --src preact --dest preact_build --no-prerender",
         "preact_ts": "cd preact && tsc && cd .. ",
-        "preact": "npm run preact_ts && npm run preact_build && simplehttpserver preact_build"
+        "oldserve": "npm run preact_ts && npm run preact_build && simplehttpserver preact_build",
+        "serve": "npm run preact_ts && npm run preact_build && firebase serve"
     },
     "eslintIgnore": [
         "preact_build",
