@@ -9,7 +9,6 @@
         "jsx": "react",
         "jsxFactory": "h",
         "lib": ["es6", "dom"]
-        //"noEmit": true
     },
     "include": ["preact/**/*", "platformScripts/**/*"],
     "exclude": ["preact/index.js"]

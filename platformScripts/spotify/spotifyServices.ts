@@ -31,7 +31,7 @@ export const fetchAllPlaylistIDs = async (): Promise<string[]> => {
         // Capped at 90 playlists, up to 4 if you need 120
         await spotifyApi.getUserPlaylists('115bwm', { limit: 30, offset: i * 30 }).then(
             (data: any) => {
-                data.body.items.array.forEach(playlist => {
+                data.body.items.forEach(playlist => {
                     playlistIDs.push(playlist.id);
                 });
             },
