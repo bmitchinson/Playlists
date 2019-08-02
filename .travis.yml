@@ -7,7 +7,7 @@ script:
     - npm run lint
     - tsc
     - npm run preact_build
-# deploy:
-#     provider: firebase
-#     token:
-#         secure:
+deploy:
+    provider: firebase
+    token:
+        - secure: uheaMIZ5aV3JXI757036nCd2NLT7zFMhqGVoTXz1dk17sPTi+h8zGEyPpBzJJHSXw0j0iWgQbZkRnW9u6S+H2ZToN1ADK5PIEE/NBCVGFEe48YeFuBh/XwblVf2kRCVUhC9y86+ec7gGdJFqYK3hQJ4764U162vZKDZJXIkwC2z+3K5mXBh1Ugm5p3O5TgbFxHg4wtUt3iSPZoYpdLei5cqZbgc0ArKHNC5Lk9ZEhstmLEFlQV0MxdyJaFLimvoZf43BVyJ4jZUyqtSmnH54USSrtjVY7PxuE5HIyTEvyWR14t3cQIC4AptdmtoaoDEEDgY84C1xmEbK+ODU/3WQRjGfF9cofpFHdjJ8m6XXNl1zP62JGyvRB6qmBhqhSFy8y8YqunK/8j3ELJk7jXDo1mGk6JU3kGrvejIyloTev1q6qMYMX2freHNYi4C60hF81JdsZQ+yQpQ8y0lg70oY8dls+PWsnB9jHSjSege2Nqsid8d5x0YIJzNY6aq7MmXxZ1UjAVZNZbGxIIS2bAJc/OqN27hCAA7JFxx9d9uVoV4wR4sjdvTDFK1ZIYu66h0sJIGoOyoSZ0wRzU8Ovn0Ko1ut24UehUyltyq7CGKaetKFhPVj8jNr/5vlTj//EI51ioim8YIOdFUizcBrll6rFgVky5dKQzkFGym85bq4qyM=
