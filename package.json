@@ -4,7 +4,7 @@
     "description": "Showcase your music collection in a way that's streaming platform agnostic + with highlighted selections.",
     "scripts": {
         "lint": "eslint . --ext .json --ext .ts || exit 0",
-        "spotify": "ts-node platformScripts/spotify/spotifyToFirestore.ts",
+        "spotify": "tsc platformScripts/spotify/spotifyToFirestore.ts && node -r source-map-support/register platformScripts/spotify/spotifyToFirestore.js",
         "watch": "preact watch --src preact",
         "preact_build": "preact build --src preact --dest preact_build --no-prerender",
         "preact_ts": "cd preact && tsc && cd .. ",

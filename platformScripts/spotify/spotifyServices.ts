@@ -44,7 +44,7 @@ export const fetchAllPlaylistIDs = async (): Promise<string[]> => {
     return playlistIDs;
 };
 
-const getFolder = (disc: string): string | undefined => {
+const getFolder = (disc: string): string | null => {
     if (disc.indexOf('dir:') > -1) {
         return disc.split(':')[1];
     }
@@ -53,8 +53,7 @@ const getFolder = (disc: string): string | undefined => {
 
 const getFiveArtists = (tracks: any): string[] => {
     const fiveArtists = [];
-
-    tracks.items.array.forEach(trackObj => {
+    tracks.forEach(trackObj => {
         if (fiveArtists.length < 5) {
             const artist = trackObj.track.artists[0].name;
             if (!fiveArtists.includes(artist)) {
@@ -68,16 +67,16 @@ const getFiveArtists = (tracks: any): string[] => {
 
 export const fetchFBMeta = async (allPlaylistIDs: string[]): Promise<IPlaylistFBMeta[]> => {
     const allPlaylistsFBMeta: IPlaylistFBMeta[] = [];
-    let count = 0;
 
-    allPlaylistIDs.forEach(async playlistID => {
+    let count = 0;
+    for (const playlistID of allPlaylistIDs) {
         if (count % 20 === 0 && count !== 0) {
             console.log(`fetched ${count} playlists`);
         }
         await spotifyApi.getPlaylist(playlistID).then(
             (data: any) => {
                 allPlaylistsFBMeta.push({
-                    artists: getFiveArtists(data.body.tracks),
+                    artists: getFiveArtists(data.body.tracks.items),
                     folder: getFolder(data.body.description),
                     followers: data.body.followers.total,
                     id: data.body.id,
@@ -86,13 +85,13 @@ export const fetchFBMeta = async (allPlaylistIDs: string[]): Promise<IPlaylistFB
                     isSpotify: data.body.owner.id === 'spotify',
                     name: data.body.name
                 });
-                count++;
             },
             (err: any) => {
                 throw new Error(`something went wrong when getting playlist ${playlistID} \nErr:${err}`);
             }
         );
-    });
+        count++;
+    }
 
     return allPlaylistsFBMeta;
 };
