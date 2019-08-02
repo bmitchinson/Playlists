@@ -3,7 +3,9 @@
     "version": "0.0.1",
     "description": "Showcase your music collection in a way that's streaming platform agnostic + with highlighted selections.",
     "scripts": {
-        "lint": "eslint . --ext .json --ext .ts || exit 0",
+        "tslint": "eslint . --ext .json --ext .ts || exit 0",
+        "stylelint": "stylelint '**/*.scss' || exit 0",
+        "lint": "npm run tslint && npm run stylelint",
         "spotify": "tsc platformScripts/spotify/spotifyToFirestore.ts && node -r source-map-support/register platformScripts/spotify/spotifyToFirestore.js",
         "preact_build": "preact build --src preact --dest preact_build --no-prerender",
         "preact_ts": "cd preact && tsc && cd .. ",

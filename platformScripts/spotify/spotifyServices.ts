@@ -69,6 +69,7 @@ export const fetchFBMeta = async (allPlaylistIDs: string[]): Promise<IPlaylistFB
     const allPlaylistsFBMeta: IPlaylistFBMeta[] = [];
 
     let count = 0;
+    // eslint-disable-next-line no-restricted-syntax
     for (const playlistID of allPlaylistIDs) {
         if (count % 20 === 0 && count !== 0) {
             console.log(`fetched ${count} playlists`);
