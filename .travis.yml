@@ -2,7 +2,7 @@ language: node_js
 node_js:
     - v10.16.0
 before_install:
-    - npm install -g typescript@3.5.3 preact-cli@2.2.1
+    - npm install -g typescript@3.5.3
 script:
     - npm run lint
     - tsc
