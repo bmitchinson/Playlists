@@ -1,6 +1,11 @@
 *.js
+# Except:
+!preact.config.js
+!preact/index.js
+
 *.js.map
 ##############
+
 
 preact_build/
 assets/
