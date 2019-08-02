@@ -3,7 +3,7 @@ node_js:
     - v10.16.0
 before_install:
     - npm install -g typescript@3.5.3
-script:
+before_deploy:
     - npm run lint
     - tsc
     - npm run preact_build
