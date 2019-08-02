@@ -25,16 +25,6 @@ export default class App extends Component<MyProps, MyState> {
     };
 
     render() {
-        return (
-            <div id="app">
-                <Header />
-                <Profile path="/" />
-                {/* <Router onChange={this.handleRoute}>
-                    <Home path="/" />
-                    <Profile path="/profile/" />
-                    <Profile path="/profile/:user" />
-                </Router> */}
-            </div>
-        );
+        return <div id="app" />;
     }
 }
