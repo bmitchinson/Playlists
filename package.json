@@ -5,7 +5,6 @@
     "scripts": {
         "lint": "eslint . --ext .json --ext .ts || exit 0",
         "spotify": "tsc platformScripts/spotify/spotifyToFirestore.ts && node -r source-map-support/register platformScripts/spotify/spotifyToFirestore.js",
-        "watch": "preact watch --src preact",
         "preact_build": "preact build --src preact --dest preact_build --no-prerender",
         "preact_ts": "cd preact && tsc && cd .. ",
         "preact": "npm run preact_ts && npm run preact_build && simplehttpserver preact_build"
