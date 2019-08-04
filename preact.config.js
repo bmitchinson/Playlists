@@ -1,5 +1,8 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable import/no-extraneous-dependencies */
 import { resolve } from 'path';
-// eslint-disable-next-line import/no-extraneous-dependencies
+import asyncPlugin from 'preact-cli-plugin-async';
+
 const preactCliTypeScript = require('preact-cli-plugin-typescript');
 
 /**
@@ -12,5 +15,6 @@ const preactCliTypeScript = require('preact-cli-plugin-typescript');
  * */
 export default function(config, env, helpers) {
     preactCliTypeScript(config);
+    asyncPlugin(config);
     config.resolve.alias['preact-cli-entrypoint'] = resolve(__dirname, 'preact/index.js');
 }

@@ -7,6 +7,7 @@ before_deploy:
     - npm run lint
     - tsc
     - npm run preact_build
+    - cd preact_build
 deploy:
     skip_cleanup: true
     provider: firebase

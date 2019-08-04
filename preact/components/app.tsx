@@ -1,13 +1,6 @@
-import { h, Component } from 'preact';
-import { Router } from 'preact-router';
-
-import Header from './header';
-
-// Code-splitting is automated for routes
-import Home from '../routes/home';
-import Profile from '../routes/profile';
-
 require('preact/debug');
+
+import { h, Component } from 'preact';
 
 interface MyProps {}
 interface MyState {}
@@ -25,6 +18,6 @@ export default class App extends Component<MyProps, MyState> {
     };
 
     render() {
-        return <div id="app" />;
+        return <h1 class="username">Live reloading is the best!</h1>;
     }
 }

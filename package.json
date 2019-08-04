@@ -9,8 +9,8 @@
         "spotify": "tsc platformScripts/spotify/spotifyToFirestore.ts && node -r source-map-support/register platformScripts/spotify/spotifyToFirestore.js",
         "preact_build": "preact build --src preact --dest preact_build --no-prerender",
         "preact_ts": "cd preact && tsc && cd .. ",
-        "oldserve": "npm run preact_ts && npm run preact_build && simplehttpserver preact_build",
-        "serve": "npm run preact_ts && npm run preact_build && firebase serve"
+        "serve": "npm run preact_ts && npm run preact_build && firebase serve",
+        "watch": "concurrently 'preact watch --src preact' 'tsc --watch'"
     },
     "eslintIgnore": [
         "preact_build",
@@ -41,6 +41,7 @@
         "@types/spotify-web-api-node": "^4.0.0",
         "@typescript-eslint/eslint-plugin": "^1.13.0",
         "@typescript-eslint/parser": "^1.13.0",
+        "concurrently": "^4.1.1",
         "eslint": "^5.3.0",
         "eslint-config-airbnb": "^17.1.1",
         "eslint-config-prettier": "^6.0.0",
@@ -52,6 +53,7 @@
         "identity-obj-proxy": "^3.0.0",
         "node-sass": "^4.12.0",
         "preact-cli": "^2.1.0",
+        "preact-cli-plugin-async": "^2.0.0",
         "preact-cli-plugin-typescript": "^0.2.2",
         "preact-render-spy": "^1.2.1",
         "prettier": "^1.18.2",

@@ -19,10 +19,12 @@ body {
     box-sizing: border-box;
 }
 
-#username {
-    color: white;
+.username {
+    color: gold;
     display: inline;
     padding-top: 48px;
+    text-align: center;
+    width: 100%;
 }
 
 .fadein {
@@ -38,9 +40,4 @@ body {
     to {
         opacity: 1;
     }
-}
-
-#app {
-    height: 100%;
-    text-align: center;
 }
