@@ -1,19 +1,19 @@
 {
-    "name": "playlists",
-    "short_name": "playlists",
+    "name": "bm playlists",
+    "short_name": "bm playlists",
     "start_url": "/",
     "display": "standalone",
     "orientation": "portrait",
-    "background_color": "#3f3f3f",
-    "theme_color": "#3f3f3f",
+    "background_color": "#00d2dd",
+    "theme_color": "#00d2dd",
     "icons": [
         {
-            "src": "/assets/icons/android-chrome-192x192.png",
+            "src": "/assets/icons/bs192.png",
             "type": "image/png",
             "sizes": "192x192"
         },
         {
-            "src": "/assets/icons/android-chrome-512x512.png",
+            "src": "/assets/icons/bs512.png",
             "type": "image/png",
             "sizes": "512x512"
         }
