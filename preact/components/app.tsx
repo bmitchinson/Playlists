@@ -1,6 +1,9 @@
 require('preact/debug');
 
 import { h, Component } from 'preact';
+import { Router } from 'preact-router';
+
+import Header from './header/header';
 
 interface MyProps {}
 interface MyState {}
@@ -18,6 +21,11 @@ export default class App extends Component<MyProps, MyState> {
     };
 
     render() {
-        return <h1 class="username">Live reloading is the best!</h1>;
+        return (
+            <div>
+                <Header />
+                <Router onChange={this.handleRoute} />
+            </div>
+        );
     }
 }

@@ -7,10 +7,10 @@
         "stylelint": "stylelint '**/*.scss' || exit 0",
         "lint": "npm run tslint && npm run stylelint",
         "spotify": "tsc platformScripts/spotify/spotifyToFirestore.ts && node -r source-map-support/register platformScripts/spotify/spotifyToFirestore.js",
-        "preact_build": "preact build --src preact --dest preact_build --no-prerender",
+        "preact_build": "preact build --src preact --dest preact_build --template preact/index.html --no-prerender",
         "preact_ts": "cd preact && tsc && cd .. ",
         "serve": "npm run preact_ts && npm run preact_build && firebase serve",
-        "watch": "concurrently 'preact watch --src preact' 'tsc --watch'"
+        "watch": "concurrently 'preact watch --src preact --template preact/index.html' 'tsc --watch'"
     },
     "eslintIgnore": [
         "preact_build",

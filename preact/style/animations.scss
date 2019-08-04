@@ -1,0 +1,14 @@
+.fadein {
+    animation-duration: 6s;
+    animation-name: fadein;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

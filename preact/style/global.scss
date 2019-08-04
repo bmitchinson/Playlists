@@ -1,11 +1,10 @@
 html,
 body {
-    background: #fafafa;
     background-image: linear-gradient(#3f3f3f, #171717);
     background-size: cover;
     color: #444;
     display: flex;
-    font-family: 'Helvetica Neue', arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
@@ -17,27 +16,4 @@ body {
 
 * {
     box-sizing: border-box;
-}
-
-.username {
-    color: gold;
-    display: inline;
-    padding-top: 48px;
-    text-align: center;
-    width: 100%;
-}
-
-.fadein {
-    animation-duration: 6s;
-    animation-name: fadein;
-}
-
-@keyframes fadein {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
 }
