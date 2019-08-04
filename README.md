@@ -28,7 +28,7 @@ firestore is then used by the frontend to diplay my music collection.
 
 ### Tooling
 
--   Build a Progressive Web App with TypeScript, Preact, and MobX
+-   Build a Progressive Web App with TypeScript, Preact, and MobX -> [Used my new starter](github.com/bmitchinson/https://github.com/bmitchinson/preact-typescript-pwa-starter)
 -   Host the site using Firebase
 -   Host platform specific scripts on GCP
 -   Host an API to access Firestore
