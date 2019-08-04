@@ -2,15 +2,18 @@ import { h } from 'preact';
 import { Link } from 'preact-router/match';
 import style from './header.scss';
 
-const iconLink: string = 'https://res.cloudinary.com/dheqbiqti/image/upload/v1548830491/Projects/Playlists/ZeddDeadCir.png';
+const iconImageLink: string = 'https://res.cloudinary.com/dheqbiqti/image/upload/v1548830491/Projects/Playlists/ZeddDeadCir.png';
+const spotifyLink: string = '';
 
 const Header = () => (
     <header class={style.header}>
         <div>
-            <img src={iconLink} alt="icon" />
+            <a href={spotifyLink}>
+                <img src={iconImageLink} alt="icon" />
+            </a>
         </div>
         <h1>
-            <a href="https://mitchinson.dev/spotify">115bwm</a>
+            <a href={spotifyLink}>115bwm</a>
         </h1>
     </header>
 );
