@@ -1,6 +1,6 @@
 # Playlists
 
-[![Build Status](https://travis-ci.com/bmitchinson/Playlists.svg?branch=master)](https://travis-ci.com/bmitchinson/Playlists)
+![Travis (.org)](https://img.shields.io/travis/bmitchinson/Playlists?logo=travis&style=for-the-badge)
 
 Showcase your music collection in a way that's streaming platform agnostic + with highlighted selections.
 (need a better name)
