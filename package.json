@@ -5,12 +5,23 @@
     "scripts": {
         "tslint": "eslint . --ext .json --ext .ts || exit 0",
         "stylelint": "stylelint '**/*.scss' || exit 0",
-        "lint": "npm run tslint && npm run stylelint",
-        "spotify": "tsc platformScripts/spotify/spotifyToFirestore.ts && node -r source-map-support/register platformScripts/spotify/spotifyToFirestore.js",
         "preact_build": "preact build --src preact --dest preact_build --template preact/index.html --no-prerender",
         "preact_ts": "cd preact && tsc && cd .. ",
         "serve": "npm run preact_ts && npm run preact_build && firebase serve",
+        "lint": "npm run tslint && npm run stylelint",
+        "spotify": "tsc platformScripts/spotify/spotifyToFirestore.ts && node -r source-map-support/register platformScripts/spotify/spotifyToFirestore.js",
         "watch": "concurrently 'preact watch --src preact --template preact/index.html' 'tsc --watch'"
+    },
+    "eslintConfig": {
+        "parser": "@typescript-eslint/parser",
+        "extends": [
+            "plugin:@typescript-eslint/recommended",
+            "plugin:prettier/recommended"
+        ],
+        "parserOptions": {
+            "ecmaVersion": "2018",
+            "sourceType": "module"
+        }
     },
     "eslintIgnore": [
         "preact_build",
