@@ -9,7 +9,6 @@ preact_build/
 node_modules/
 ##############
 
-.vscode/
 *.DS_Store
 ##############
 

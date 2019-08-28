@@ -3,8 +3,8 @@
     "version": "0.0.1",
     "description": "Showcase your music collection in a way that's streaming platform agnostic + with highlighted selections.",
     "scripts": {
-        "tslint": "eslint . --ext .json --ext .ts || exit 0",
-        "stylelint": "stylelint '**/*.scss' || exit 0",
+        "tslint": "eslint . --ext .json --ext .ts",
+        "stylelint": "stylelint '**/*.scss'",
         "preact_build": "preact build --src preact --dest preact_build --template preact/index.html --no-prerender",
         "preact_ts": "cd preact && tsc && cd .. ",
         "serve": "npm run preact_ts && npm run preact_build && firebase serve",
@@ -44,6 +44,8 @@
         "preact-compat": "^3.17.0",
         "preact-render-to-string": "^4.1.0",
         "preact-router": "^2.6.1",
+        "prettier-eslint": "^9.0.0",
+        "prettier-eslint-cli": "^5.0.0",
         "spotify-web-api-node": "^4.0.0",
         "tidal-api-wrapper": "^1.7.0"
     },
@@ -72,6 +74,7 @@
         "sass-loader": "^7.1.0",
         "simplehttpserver": "^0.3.0",
         "source-map-support": "^0.5.13",
+        "stylelint": "^10.1.0",
         "stylelint-config-standard": "^18.3.0",
         "stylelint-order": "^3.0.1",
         "superstatic": "^6.0.4",
