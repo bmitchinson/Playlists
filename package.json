@@ -3,8 +3,8 @@
     "version": "0.0.1",
     "description": "Showcase your music collection in a way that's streaming platform agnostic + with highlighted selections.",
     "scripts": {
-        "lintts": "eslint . --ext .ts --ext .tsx",
-        "stylelint": "stylelint '**/*.scss'",
+        "lint_ts": "eslint . --ext .ts --ext .tsx || exit 0",
+        "lint_style": "stylelint preact/**/*.scss || exit 0",
         "preact_build": "preact build --src preact --dest preact_build --template preact/index.html --no-prerender",
         "preact_ts": "cd preact && tsc && cd .. ",
         "serve": "npm run preact_ts && npm run preact_build && firebase serve",

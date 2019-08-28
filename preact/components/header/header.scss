@@ -28,39 +28,34 @@
     font-size: 24px;
     font-weight: 400;
 
-    a {
-        color: #fff;
-        text-decoration: none;
+    nav {
+        float: right;
+        font-size: 100%;
 
-        &:visited {
+        a {
+            background: rgba(255, 255, 255, 0);
             color: #fff;
-        }
-    }
-}
+            display: inline-block;
+            height: 56px;
+            line-height: 56px;
+            min-width: 50px;
+            padding: 0 15px;
+            text-align: center;
+            text-decoration: none;
+            will-change: background-color;
 
-.header nav {
-    float: right;
-    font-size: 100%;
+            &:hover,
+            &:active {
+                background: rgba(0, 0, 0, 0.2);
+            }
 
-    a {
-        background: rgba(255, 255, 255, 0);
-        color: #fff;
-        display: inline-block;
-        height: 56px;
-        line-height: 56px;
-        min-width: 50px;
-        padding: 0 15px;
-        text-align: center;
-        text-decoration: none;
-        will-change: background-color;
+            &.active {
+                background: rgba(0, 0, 0, 0.4);
+            }
 
-        &:hover,
-        &:active {
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        &.active {
-            background: rgba(0, 0, 0, 0.4);
+            &:visited {
+                color: #fff;
+            }
         }
     }
 }
