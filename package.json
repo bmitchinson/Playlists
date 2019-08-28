@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "description": "Showcase your music collection in a way that's streaming platform agnostic + with highlighted selections.",
     "scripts": {
-        "tslint": "eslint . --ext .json --ext .ts",
+        "eslint": "eslint . --ext .ts --ext .tsx",
         "stylelint": "stylelint '**/*.scss'",
         "preact_build": "preact build --src preact --dest preact_build --template preact/index.html --no-prerender",
         "preact_ts": "cd preact && tsc && cd .. ",
@@ -15,12 +15,19 @@
     "eslintConfig": {
         "parser": "@typescript-eslint/parser",
         "extends": [
+            "standard-preact",
             "plugin:@typescript-eslint/recommended",
             "plugin:prettier/recommended"
         ],
         "parserOptions": {
             "ecmaVersion": "2018",
             "sourceType": "module"
+        },
+        "rules": {
+            "@typescript-eslint/explicit-function-return-type": 0,
+            "@typescript-eslint/no-explicit-any": 0,
+            "@typescript-eslint/no-empty-interface": 0,
+            "@typescript-eslint/explicit-member-accessibility": 0
         }
     },
     "eslintIgnore": [
@@ -58,11 +65,16 @@
         "eslint": "^5.3.0",
         "eslint-config-airbnb": "^17.1.1",
         "eslint-config-prettier": "^6.0.0",
+        "eslint-config-standard": "^14.1.0",
+        "eslint-config-standard-preact": "^1.1.6",
         "eslint-plugin-import": "^2.18.2",
         "eslint-plugin-json": "^1.4.0",
         "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-node": "^9.1.0",
         "eslint-plugin-prettier": "^3.1.0",
+        "eslint-plugin-promise": "^4.2.1",
         "eslint-plugin-react": "^7.14.3",
+        "eslint-plugin-standard": "^4.0.1",
         "identity-obj-proxy": "^3.0.0",
         "node-sass": "^4.12.0",
         "preact-cli": "^2.1.0",

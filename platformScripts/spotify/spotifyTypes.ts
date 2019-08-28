@@ -1,4 +1,4 @@
-export interface IPlaylistFBMeta {
+export interface PlaylistFBMeta {
     // if (isOwner && !folder): playlist is excluded from firebase
     artists: string[];
     folder: string | null;

@@ -1,13 +1,13 @@
 import { Firestore } from '@google-cloud/firestore';
 
-import { IPlaylistFBMeta } from './spotifyTypes';
+import { PlaylistFBMeta } from './spotifyTypes';
 
 const firestore = new Firestore({
     keyFilename: './playlistAdmin.json',
     projectId: 'playlists-245820'
 });
 
-export const addToMyPlaylists = async (playlist: IPlaylistFBMeta) => {
+export const addToMyPlaylists = async (playlist: PlaylistFBMeta) => {
     try {
         await firestore
             .collection('myPlaylists')
@@ -18,7 +18,7 @@ export const addToMyPlaylists = async (playlist: IPlaylistFBMeta) => {
     }
 };
 
-export const addToFollowPlaylists = async (playlist: IPlaylistFBMeta) => {
+export const addToFollowPlaylists = async (playlist: PlaylistFBMeta) => {
     try {
         await firestore
             .collection('followPlaylists')

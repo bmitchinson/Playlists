@@ -1,4 +1,4 @@
-import { IPlaylistFBMeta } from './spotifyTypes';
+import { PlaylistFBMeta } from './spotifyTypes';
 import { fetchAllPlaylistIDs, fetchFBMeta, setNewAccessToken } from './spotifyServices';
 import { addToFollowPlaylists, addToMyPlaylists, deleteAllDocumentsInCollection } from './firebaseServices';
 
@@ -7,12 +7,12 @@ import { addToFollowPlaylists, addToMyPlaylists, deleteAllDocumentsInCollection 
     await setNewAccessToken();
     const allPlaylistIDs: string[] = await fetchAllPlaylistIDs();
     console.log(`getting FBMeta data for all ${allPlaylistIDs.length} public playlists...`);
-    const allPublicPlaylistsFBMeta: IPlaylistFBMeta[] = await fetchFBMeta(allPlaylistIDs);
+    const allPublicPlaylistsFBMeta: PlaylistFBMeta[] = await fetchFBMeta(allPlaylistIDs);
     if (allPublicPlaylistsFBMeta.length === 0) {
         throw new Error('No FBMeta was received');
     }
-    const myPlaylistsToPublish: IPlaylistFBMeta[] = allPublicPlaylistsFBMeta.filter(playlist => playlist.folder);
-    const followedPlaylistsToPublish: IPlaylistFBMeta[] = allPublicPlaylistsFBMeta.filter(playlist => !playlist.isOwner);
+    const myPlaylistsToPublish: PlaylistFBMeta[] = allPublicPlaylistsFBMeta.filter(playlist => playlist.folder);
+    const followedPlaylistsToPublish: PlaylistFBMeta[] = allPublicPlaylistsFBMeta.filter(playlist => !playlist.isOwner);
     console.log(`you have ${myPlaylistsToPublish.length} tagged playlists and ${followedPlaylistsToPublish.length} public follows`);
 
     console.log(`clearing existing collections...`);

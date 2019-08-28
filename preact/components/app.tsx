@@ -1,6 +1,6 @@
 require('preact/debug');
 
-import { h, Component } from 'preact';
+import { h, Fragment, Component } from 'preact';
 import { Router } from 'preact-router';
 
 import Header from './header/header';
@@ -14,7 +14,7 @@ export default class App extends Component<MyProps, MyState> {
      *	@param {string} event.url	The newly routed URL
      */
 
-    currentUrl;
+    currentUrl: string;
 
     handleRoute = e => {
         this.currentUrl = e.url;
@@ -25,7 +25,7 @@ export default class App extends Component<MyProps, MyState> {
             <div>
                 <Header />
                 <Router onChange={this.handleRoute} />
-            </div>
+          </div>
         );
     }
 }

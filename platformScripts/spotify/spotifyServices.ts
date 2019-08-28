@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-import { IPlaylistFBMeta } from './spotifyTypes';
+import { PlaylistFBMeta } from './spotifyTypes';
 
 import SpotifyWebApi = require('spotify-web-api-node');
 
@@ -65,8 +65,8 @@ const getFiveArtists = (tracks: any): string[] => {
     return fiveArtists;
 };
 
-export const fetchFBMeta = async (allPlaylistIDs: string[]): Promise<IPlaylistFBMeta[]> => {
-    const allPlaylistsFBMeta: IPlaylistFBMeta[] = [];
+export const fetchFBMeta = async (allPlaylistIDs: string[]): Promise<PlaylistFBMeta[]> => {
+    const allPlaylistsFBMeta: PlaylistFBMeta[] = [];
 
     let count = 0;
     // eslint-disable-next-line no-restricted-syntax
