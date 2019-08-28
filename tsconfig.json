@@ -11,6 +11,6 @@
         "jsxFactory": "h",
         "lib": ["es6", "dom"]
     },
-    "include": ["preact/**/*.tsx", "platformScripts/**/*.ts"],
+    "include": ["preact/**/*.tsx", "platformScripts/**/*.ts "],
     "exclude": ["preact/index.js"]
 }

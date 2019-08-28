@@ -1,6 +1,6 @@
 require('preact/debug');
 
-import { h, Fragment, Component } from 'preact';
+import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 
 import Header from './header/header';
@@ -25,7 +25,7 @@ export default class App extends Component<MyProps, MyState> {
             <div>
                 <Header />
                 <Router onChange={this.handleRoute} />
-          </div>
+            </div>
         );
     }
 }

@@ -7,7 +7,7 @@ const tidal = new Tidal();
 
 const whitelistPlaylistNames: string[] = []; // ['soft indie'];
 
-const deleteAll = async () => {
+export const deleteAll = async () => {
     await tidal.login(process.env.tidalUser, process.env.tidalPass);
     try {
         const playlists = await tidal.getPlaylists();
