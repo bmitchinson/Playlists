@@ -1,4 +1,4 @@
-.header {
+header {
     background: #2a2a2a;
     box-shadow: 0 0 5px rgba(0, 210, 221, 0.5);
     display: flex;
@@ -10,7 +10,7 @@
     z-index: 50;
 }
 
-.header div {
+header div {
     align-self: center;
     height: 90%;
     margin-left: 0.6%;
@@ -22,40 +22,32 @@
     }
 }
 
-.header h1 {
+header h1 {
     align-self: center;
     color: #fff;
     font-size: 24px;
     font-weight: 400;
 
-    nav {
-        float: right;
-        font-size: 100%;
+    a {
+        background: rgba(255, 255, 255, 0);
+        color: #fff;
+        display: inline-block;
+        height: 56px;
+        line-height: 56px;
+        min-width: 50px;
+        padding: 0 15px;
+        text-align: center;
+        text-decoration: none;
+        will-change: background-color;
 
-        a {
-            background: rgba(255, 255, 255, 0);
+        a:hover,
+        a:active {
+            background: rgba(0, 0, 0, 0.2);
+            color: rgba(0, 210, 221, 0.5);
+        }
+
+        a:visited {
             color: #fff;
-            display: inline-block;
-            height: 56px;
-            line-height: 56px;
-            min-width: 50px;
-            padding: 0 15px;
-            text-align: center;
-            text-decoration: none;
-            will-change: background-color;
-
-            &:hover,
-            &:active {
-                background: rgba(0, 0, 0, 0.2);
-            }
-
-            &.active {
-                background: rgba(0, 0, 0, 0.4);
-            }
-
-            &:visited {
-                color: #fff;
-            }
         }
     }
 }
