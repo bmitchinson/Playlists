@@ -6,5 +6,9 @@
     "prettier.stylelintIntegration": true,
     "prettier.disableLanguages": [],
     "typescript.tsdk": "node_modules\\typescript\\lib",
-    "eslint.alwaysShowStatus": true
+    "eslint.alwaysShowStatus": true,
+    "files.exclude": {
+        "**/*.js": { "when": "$(basename).ts" },
+        "**/*.js.map": true
+    }
 }
