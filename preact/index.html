@@ -16,6 +16,12 @@
         <% } else if (file.match(/manifest\.json$/)) { %>
         <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath + file %>" />
         <% } %> <% } %> <% } %>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="BM Playlists" />
+        <link rel="apple-touch-icon" href="/assets/icons/bs512.png" />
+        <meta name="description" content="A platform agnostic showcase of my music collection with highlighted selections." />
+        <meta name="theme-color" content="#00D2DD" />
     </head>
     <body>
         <%= htmlWebpackPlugin.options.ssr({ url: '/' }) %>

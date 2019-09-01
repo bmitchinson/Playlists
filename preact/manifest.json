@@ -1,6 +1,6 @@
 {
-    "name": "bm playlists",
-    "short_name": "bm playlists",
+    "name": "BM Playlists",
+    "short_name": "BM Playlists",
     "start_url": "/",
     "display": "standalone",
     "orientation": "portrait",
