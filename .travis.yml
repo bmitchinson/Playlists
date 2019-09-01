@@ -4,8 +4,9 @@ node_js:
 before_install:
     - npm install -g typescript@3.5.3
 before_deploy:
-    - npm run lint
-    - tsc
+    - npm run lint_ts
+    - npm run lint_style
+    - npm run compile_tsc
     - npm run preact_build
 deploy:
     skip_cleanup: true
