@@ -1,114 +1,115 @@
 {
-  "name": "playlists",
-  "version": "0.0.1",
-  "description": "Showcase your music collection in a way that's streaming platform agnostic + with highlighted selections.",
-  "scripts": {
-    "lint_ts": "eslint . --ext .ts --ext .tsx || exit 0",
-    "lint_style": "stylelint preact/**/*.scss || exit 0",
-    "compile_tsc": "tsc",
-    "preact_build": "preact build --src preact --dest preact_build --template preact/index.html --no-prerender",
-    "serve": "npm run compile_tsc && npm run preact_build && firebase serve",
-    "lint": "npm run tslint && npm run stylelint",
-    "spotify": "tsc platformScripts/spotify/spotifyToFirestore.ts && node -r source-map-support/register platformScripts/spotify/spotifyToFirestore.js",
-    "watch": "concurrently \"preact watch --src preact --template preact/index.html\" \"tsc --watch\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bmitchinson/Playlists.git"
-  },
-  "author": "Ben Mitchinson",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/bmitchinson/Playlists/issues"
-  },
-  "homepage": "https://github.com/bmitchinson/Playlists",
-  "dependencies": {
-    "@google-cloud/firestore": "^2.2.4",
-    "dotenv": "^8.0.0",
-    "preact": "^8.2.6",
-    "preact-compat": "^3.17.0",
-    "preact-render-to-string": "^4.1.0",
-    "preact-router": "^2.6.1",
-    "spotify-web-api-node": "^4.0.0",
-    "tidal-api-wrapper": "^1.7.0"
-  },
-  "devDependencies": {
-    "@types/node": "^12.6.8",
-    "@types/node-sass": "^4.11.0",
-    "@types/spotify-web-api-node": "^4.0.0",
-    "@typescript-eslint/eslint-plugin": "^1.13.0",
-    "@typescript-eslint/parser": "^1.13.0",
-    "concurrently": "^4.1.1",
-    "css-loader": "^3.2.0",
-    "eslint": "^5.3.0",
-    "eslint-config-airbnb": "^17.1.1",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-config-standard-preact": "^1.1.6",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-json": "^1.4.0",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-node": "^9.1.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-react": "^7.14.3",
-    "eslint-plugin-standard": "^4.0.1",
-    "identity-obj-proxy": "^3.0.0",
-    "node-sass": "^4.12.0",
-    "preact-cli": "^2.1.0",
-    "preact-cli-plugin-async": "^2.0.0",
-    "preact-cli-plugin-typescript": "^0.2.2",
-    "preact-render-spy": "^1.2.1",
-    "prettier": "^1.18.2",
-    "prettier-eslint": "^9.0.0",
-    "prettier-eslint-cli": "^5.0.0",
-    "prettier-stylelint": "^0.4.2",
-    "sass-loader": "^7.1.0",
-    "simplehttpserver": "^0.3.0",
-    "source-map-support": "^0.5.13",
-    "style-loader": "^1.0.0",
-    "stylelint": "^10.1.0",
-    "stylelint-config-standard": "^18.3.0",
-    "stylelint-order": "^3.0.1",
-    "superstatic": "^6.0.4",
-    "typescript": "^3.5.3"
-  },
-  "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
-    "extends": [
-      "standard-preact",
-      "plugin:prettier/recommended",
-      "plugin:@typescript-eslint/recommended"
-    ],
-    "parserOptions": {
-      "ecmaVersion": "2018",
-      "sourceType": "module"
+    "name": "playlists",
+    "version": "0.0.1",
+    "description": "Showcase your music collection in a way that's streaming platform agnostic + with highlighted selections.",
+    "scripts": {
+        "lint_ts": "eslint . --ext .ts --ext .tsx || exit 0",
+        "lint_style": "stylelint preact/**/*.scss || exit 0",
+        "compile_tsc": "tsc",
+        "preact_build": "preact build --src preact --dest preact_build --template preact/index.html --no-prerender",
+        "serve": "npm run compile_tsc && npm run preact_build && firebase serve",
+        "lint": "npm run tslint && npm run stylelint",
+        "spotify": "tsc platformScripts/spotify/spotifyToFirestore.ts && node -r source-map-support/register platformScripts/spotify/spotifyToFirestore.js",
+        "watch": "concurrently \"preact watch --src preact --template preact/index.html\" \"tsc --watch\"",
+        "deploy": "npm run preact_build && firebase deploy"
     },
-    "rules": {
-      "@typescript-eslint/explicit-function-return-type": 0,
-      "@typescript-eslint/no-explicit-any": 0,
-      "@typescript-eslint/no-empty-interface": 0,
-      "@typescript-eslint/explicit-member-accessibility": 0
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/bmitchinson/Playlists.git"
     },
-    "overrides": [
-      {
-        "files": [
-          "*.tsx"
+    "author": "Ben Mitchinson",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/bmitchinson/Playlists/issues"
+    },
+    "homepage": "https://github.com/bmitchinson/Playlists",
+    "dependencies": {
+        "@google-cloud/firestore": "^2.2.4",
+        "dotenv": "^8.0.0",
+        "preact": "^8.2.6",
+        "preact-compat": "^3.17.0",
+        "preact-render-to-string": "^4.1.0",
+        "preact-router": "^2.6.1",
+        "spotify-web-api-node": "^4.0.0",
+        "tidal-api-wrapper": "^1.7.0"
+    },
+    "devDependencies": {
+        "@types/node": "^12.6.8",
+        "@types/node-sass": "^4.11.0",
+        "@types/spotify-web-api-node": "^4.0.0",
+        "@typescript-eslint/eslint-plugin": "^1.13.0",
+        "@typescript-eslint/parser": "^1.13.0",
+        "concurrently": "^4.1.1",
+        "css-loader": "^3.2.0",
+        "eslint": "^5.3.0",
+        "eslint-config-airbnb": "^17.1.1",
+        "eslint-config-prettier": "^6.0.0",
+        "eslint-config-standard": "^14.1.0",
+        "eslint-config-standard-preact": "^1.1.6",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-json": "^1.4.0",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-node": "^9.1.0",
+        "eslint-plugin-prettier": "^3.1.0",
+        "eslint-plugin-promise": "^4.2.1",
+        "eslint-plugin-react": "^7.14.3",
+        "eslint-plugin-standard": "^4.0.1",
+        "identity-obj-proxy": "^3.0.0",
+        "node-sass": "^4.12.0",
+        "preact-cli": "^2.1.0",
+        "preact-cli-plugin-async": "^2.0.0",
+        "preact-cli-plugin-typescript": "^0.2.2",
+        "preact-render-spy": "^1.2.1",
+        "prettier": "^1.18.2",
+        "prettier-eslint": "^9.0.0",
+        "prettier-eslint-cli": "^5.0.0",
+        "prettier-stylelint": "^0.4.2",
+        "sass-loader": "^7.1.0",
+        "simplehttpserver": "^0.3.0",
+        "source-map-support": "^0.5.13",
+        "style-loader": "^1.0.0",
+        "stylelint": "^10.1.0",
+        "stylelint-config-standard": "^18.3.0",
+        "stylelint-order": "^3.0.1",
+        "superstatic": "^6.0.4",
+        "typescript": "^3.5.3"
+    },
+    "eslintConfig": {
+        "parser": "@typescript-eslint/parser",
+        "extends": [
+            "standard-preact",
+            "plugin:prettier/recommended",
+            "plugin:@typescript-eslint/recommended"
         ],
+        "parserOptions": {
+            "ecmaVersion": "2018",
+            "sourceType": "module"
+        },
         "rules": {
-          "@typescript-eslint/indent": "off",
-          "react/jsx-indent": "off"
+            "@typescript-eslint/explicit-function-return-type": 0,
+            "@typescript-eslint/no-explicit-any": 0,
+            "@typescript-eslint/no-empty-interface": 0,
+            "@typescript-eslint/explicit-member-accessibility": 0
+        },
+        "overrides": [
+            {
+                "files": [
+                    "*.tsx"
+                ],
+                "rules": {
+                    "@typescript-eslint/indent": "off",
+                    "react/jsx-indent": "off"
+                }
+            }
+        ],
+        "settings": {
+            "react": {
+                "version": "16.0"
+            }
         }
-      }
-    ],
-    "settings": {
-      "react": {
-        "version": "16.0"
-      }
-    }
-  },
-  "eslintIgnore": [
-    "preact_build",
-    "out"
-  ]
+    },
+    "eslintIgnore": [
+        "preact_build",
+        "out"
+    ]
 }
