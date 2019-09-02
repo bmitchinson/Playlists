@@ -1,6 +1,8 @@
 # ToDo
 
--   Populate all playlists within spotify
+[x] Populate all playlists within spotify
+
+-   fix unhandled rejection, get ts mapping properly. ts-node?
 -   add link map to existing FBInterface
 -   Convert to similar services for scrapping using soundizz
 -   Loading all data from firebase with proper progress spinner

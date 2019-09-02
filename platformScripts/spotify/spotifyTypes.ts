@@ -7,5 +7,15 @@ export interface PlaylistFBMeta {
     id: string;
     isOwner: boolean;
     isSpotify: boolean;
+    links: Links | null;
     name: string;
+}
+
+export interface Links {
+    spotify: string;
+    apple: string | null;
+    amazon: string | null;
+    soundcloud: string | null;
+    tidal: string | null;
+    youtube: string | null;
 }

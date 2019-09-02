@@ -84,6 +84,7 @@ export const fetchFBMeta = async (allPlaylistIDs: string[]): Promise<PlaylistFBM
                     image: data.body.images[0].url,
                     isOwner: data.body.owner.id === '115bwm',
                     isSpotify: data.body.owner.id === 'spotify',
+                    links: null,
                     name: data.body.name
                 });
             },
