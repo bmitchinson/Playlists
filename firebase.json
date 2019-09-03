@@ -1,10 +1,6 @@
 {
-  "hosting": {
-    "public": "preact_build",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
-  }
+    "hosting": {
+        "public": "preact_build",
+        "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+    }
 }

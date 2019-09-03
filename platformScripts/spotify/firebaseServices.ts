@@ -3,7 +3,7 @@ import { Firestore } from '@google-cloud/firestore';
 import { PlaylistFBMeta } from './spotifyTypes';
 
 const firestore = new Firestore({
-    keyFilename: './playlistAdmin.json',
+    keyFilename: 'platformScripts/playlistAdmin.json',
     projectId: 'playlists-245820'
 });
 
