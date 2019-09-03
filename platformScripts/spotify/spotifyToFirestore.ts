@@ -1,6 +1,6 @@
 import { PlaylistFBMeta } from './spotifyTypes';
 import { fetchAllPlaylistIDs, fetchFBMeta, setNewAccessToken } from './spotifyServices';
-import { addToFollowPlaylists, addToMyPlaylists, deleteAllDocumentsInCollection } from './firebaseServices';
+import { addToFirebase, deleteAllDocumentsInCollection } from './firebaseServices';
 
 // Get all spotify info to populate firebase
 (async () => {
@@ -20,9 +20,9 @@ import { addToFollowPlaylists, addToMyPlaylists, deleteAllDocumentsInCollection 
     await deleteAllDocumentsInCollection('followPlaylists');
 
     console.log('pushing to myPlaylists...');
-    myPlaylistsToPublish.forEach(async playlist => await addToMyPlaylists(playlist));
+    myPlaylistsToPublish.forEach(async playlist => await addToFirebase('myPlaylists', playlist));
     console.log('pushing to followedPlaylists..');
-    followedPlaylistsToPublish.forEach(async playlist => await addToFollowPlaylists(playlist));
+    followedPlaylistsToPublish.forEach(async playlist => await addToFirebase('followPlaylists', playlist));
 
     console.log('***Finished!***');
 })();

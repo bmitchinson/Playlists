@@ -7,25 +7,15 @@ const firestore = new Firestore({
     projectId: 'playlists-245820'
 });
 
-export const addToMyPlaylists = async (playlist: PlaylistFBMeta) => {
+export const addToFirebase = async (collectionName: string, playlist: PlaylistFBMeta) => {
+    const docTitle = `${playlist.name.replace(/[^a-zA-Z0-9 -]/g, '')} ${playlist.id.slice(-5)}`;
     try {
         await firestore
-            .collection('myPlaylists')
-            .doc(`${playlist.name.replace(/[^a-zA-Z0-9 -]/g, '')}`)
+            .collection(collectionName)
+            .doc(docTitle)
             .set(playlist);
     } catch (e) {
-        console.log(`something went wrong when posting playlist "${playlist.name}" to myPlaylists`);
-    }
-};
-
-export const addToFollowPlaylists = async (playlist: PlaylistFBMeta) => {
-    try {
-        await firestore
-            .collection('followPlaylists')
-            .doc(`${playlist.name.replace(/[^a-zA-Z0-9 -]/g, '')}`)
-            .set(playlist);
-    } catch (e) {
-        console.log(`something went wrong when posting playlist "${playlist.name}" to followPlaylists`);
+        console.log(`something went wrong when posting playlist "${playlist.name}" to "${collectionName}"`);
     }
 };
 
