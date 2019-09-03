@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-import { PlaylistFBMeta } from './spotifyTypes';
+import { PlaylistFBMeta, Links } from './spotifyTypes';
 
 import SpotifyWebApi = require('spotify-web-api-node');
 
@@ -65,6 +65,19 @@ const getFiveArtists = (tracks: any): string[] => {
     return fiveArtists;
 };
 
+const getLinksFromID = (id: string): Links => {
+    const prefix = 'https://open.spotify.com/playlist/';
+
+    return {
+        spotify: prefix + id,
+        apple: '',
+        amazon: '',
+        soundcloud: '',
+        tidal: '',
+        youtube: ''
+    };
+};
+
 export const fetchFBMeta = async (allPlaylistIDs: string[]): Promise<PlaylistFBMeta[]> => {
     const allPlaylistsFBMeta: PlaylistFBMeta[] = [];
 
@@ -84,7 +97,7 @@ export const fetchFBMeta = async (allPlaylistIDs: string[]): Promise<PlaylistFBM
                     image: data.body.images[0].url,
                     isOwner: data.body.owner.id === '115bwm',
                     isSpotify: data.body.owner.id === 'spotify',
-                    links: null,
+                    links: getLinksFromID(data.body.id),
                     name: data.body.name
                 });
             },
