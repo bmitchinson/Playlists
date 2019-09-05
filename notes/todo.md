@@ -8,11 +8,13 @@
 
 [x] populating discover weekly playlists
 
+-   ios cropping issue -> local hosting of build
 -   Convert to similar services for scrapping using soundizz
+-   Populate tidal
+-   Use media query tip floating component
 -   Loading all data from firebase with proper progress spinner
     -   just spotify at first
     -   mess with PWA caching? Maybe just save that for the end
--   ios cropping issue
 -   UI playlist folder, sample tile cards
 -   Expand rest of UI
 -   scripts to fetch URLs from alternative services -> populating FB

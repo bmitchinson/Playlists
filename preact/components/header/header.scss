@@ -1,11 +1,13 @@
 header {
     background: #2a2a2a;
-    box-shadow: 0 0 5px rgba(0, 210, 221, 0.5);
+    box-shadow: 0 0 4px rgba(0, 210, 221, 0.5);
     display: flex;
     font-family: 'Montserrat', sans-serif;
-    height: 78px;
+    height: 8%;
+    margin-left: env(safe-area-inset-left);
+    margin-right: env(safe-area-inset-right);
+    margin-top: env(safe-area-inset-top);
     position: fixed;
-    top: 0;
     width: 100%;
     z-index: 50;
 }
@@ -25,16 +27,13 @@ header div {
 header h1 {
     align-self: center;
     color: #fff;
-    font-size: 24px;
+    font-size: 1.3em;
     font-weight: 400;
 
     a {
         background: rgba(255, 255, 255, 0);
         color: #fff;
         display: inline-block;
-        height: 56px;
-        line-height: 56px;
-        min-width: 50px;
         text-align: center;
         text-decoration: none;
         will-change: background-color;
